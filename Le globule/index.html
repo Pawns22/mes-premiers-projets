@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le globule</title>
+    <style>
+        body {
+            font-family: "roboto", sans-serif;
+            margin-left: 20%;
+            margin-right: 20%;
+            background: linear-gradient(black, grey, white 50%);
+            text-align: justify;
+        }
+
+        ul li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main {
+            box-shadow: 5px -2px 20px 0px #888;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        main {
+            font-size: 0;
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .main main {
+            margin: 40px;
+            margin-bottom: 0;
+
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 80px;
+            letter-spacing: 3px;
+            text-align: center;
+            color: #139c19;
+            text-shadow: -3px 3px 3px #000;
+        }
+
+        .menu {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            font-weight: bold;
+            margin-left: 30px;
+            margin-right: 30px;
+            background: linear-gradient(#444, #111);
+            border-radius: 20px 20px 20px 20px;
+            list-style: none;
+            box-shadow: 0px 2px 2px #9c9c9c;
+        }
+
+        .item {
+            color: #f2f2f2;
+        }
+
+        .item:hover {
+            background: linear-gradient(#19b123, #139c19);
+            color: #fafafa;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        .menu li {
+            display: table-cell;
+            position: relative;
+        }
+
+        li:hover .sous-menu {
+            display: block;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+
+        .sous-menu {
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            display: none;
+            top: 100%;
+            left: 0;
+            width: 550px;
+            z-index: 9999;
+            border: 10px solid black;
+        }
+
+        .menu li:hover .sous-menu {
+            left: 0;
+        }
+
+        .sous-menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        h2 {
+            color: #000;
+        }
+
+        .panneau {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            padding: 0;
+            margin: 0;
+        }
+
+        .img-fl-r {
+            width: 100%;
+            vertical-align: top;
+            float: right;
+            padding: 0;
+            margin: 0;
+            line-height: 0;
+        }
+
+        .img-fl-r img {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sous-menu li {
+            display: block;
+            background: linear-gradient(#19b123, #139c19);
+            padding: 0;
+            margin: 0;
+        }
+
+        .container-panneau-menu {
+            vertical-align: middle;
+            padding-left: 20px;
+            width: 50%;
+            text-align: center;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-panneau-menu .col {
+            width: 100%;
+            list-style: none;
+        }
+
+        .container-panneau-menu,
+        .img-fl-r {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .col li a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 4px 0;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .col a:hover {
+            background: linear-gradient(#19b123, #139c19);
+            color: #ededed;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        .deux-col {
+            columns: 180px 2;
+            column-rule: 1px solid plum;
+            column-fill: balance;
+            margin: 0;
+            vertical-align: top;
+        }
+
+        .deux-col p:first-child {
+            margin-top: 0;
+        }
+
+        .col-left,
+        .col-right {
+            display: table-cell;
+            vertical-align: top;
+            font-size: 1rem;
+        }
+
+        .col-left {
+            width: 70%;
+            color: #000;
+            padding-right: 40px;
+            padding-bottom: 20px;
+        }
+
+        .gluon {
+            float: left;
+            width: 40%;
+            max-width: 300px;
+            margin: 0px 20px 10px -40px;
+        }
+
+        .gluon img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .gluon figcaption {
+            text-align: end;
+            color: #77777783;
+            font-size: 12px;
+        }
+
+        .col-right {
+            width: 30%;
+            box-shadow: -6px 0px 10px -8px #ccc;
+            padding-right: 80px;
+            margin-right: 40px;
+            padding-top: 20px;
+            vertical-align: bottom;
+        }
+
+        .intro {
+            color: #777;
+            font-style: italic;
+        }
+
+
+        .col-right figure {
+            margin: 0;
+        }
+
+        .col-right figure img {
+            display: block;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .col-right h3,
+        .col-right p {
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        .col-right p {
+            font-size: 12px;
+        }
+
+        h3 {
+            color: #139c19;
+            font-size: 20px;
+        }
+
+        .demi-globe {
+            position: relative;
+            padding-left: 40px;
+            color: #139c19;
+        }
+
+        .demi-globe::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 40px;
+            background: #139c19;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+
+
+        footer {
+            border-top: 1px solid #139c19;
+            text-align: center;
+            padding: 10px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .item-menu-footer {
+            display: inline-block;
+            list-style: none;
+            background: linear-gradient(#19b123, #139c19);
+            border-radius: 20px;
+        }
+
+        .item-menu-footer a {
+            display: block;
+            color: #e9f6e9;
+            text-decoration: none;
+            padding: 5px 30px;
+        }
+
+        .item-menu-footer:hover {
+            background: rgba(21, 165, 29, 0.5);
+
+        }
+
+        .item-menu-footer a:hover {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <h1>Le globule</h1>
+        </header>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#" class="item">Accueil</a></li>
+                <li>
+                    <a href="#" class="item">Tous Nos Choix</a>
+                    <ul class="sous-menu">
+                        <li>
+                            <div class="panneau">
+                                <div class="container-panneau-menu">
+                                    <a href="#">menu 1</a>
+                                </div>
+                                <figure class="img-fl-r">
+                                    <img src="img/menu-01.jpg" alt="menu-01">
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="panneau">
+                                <div class="container-panneau-menu">
+                                    <a href="#">menu 2</a>
+                                </div>
+                                <figure class="img-fl-r">
+                                    <img src="img/menu-02.jpg" alt="menu-02">
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="panneau">
+                                <div class="container-panneau-menu">
+                                    <a href="#">menu 3</a>
+                                </div>
+                                <figure class="img-fl-r">
+                                    <img src="img/menu-03.jpg" alt="menu-03">
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#" class="item">Nos Triangles Ronds</a>
+                    <ul class="sous-menu">
+                        <li>
+                            <section class="panneau">
+                                <div class="container-panneau-menu">
+                                    <h2>nos triangles 1</h2>
+                                    <ul class="col">
+                                        <li><a href="#">Triangles 1.1</a></li>
+                                        <li><a href="#">Triangles 1.2</a></li>
+                                        <li><a href="#">Triangles 1.3</a></li>
+                                    </ul>
+                                </div>
+                                <figure class="img-fl-r">
+                                    <img src="img/menu-04.jpg" alt="menu-04">
+                                </figure>
+                            </section>
+                        </li>
+                        <li>
+                            <section class="panneau">
+                                <div class="container-panneau-menu">
+                                    <h2>nos surtriangles 2</h2>
+                                    <ul class="col">
+                                        <li><a href="#">Surtriangles 1.1</a></li>
+                                        <li><a href="#">Surtriangles 1.2</a></li>
+                                        <li><a href="#">Surtriangles 1.3</a></li>
+                                    </ul>
+                                </div>
+                                <figure class="img-fl-r">
+                                    <img src="img/menu-06.jpg" alt="menu-06">
+                                </figure>
+                            </section>
+                        </li>
+                        <li>
+                            <section class="panneau">
+                                <div class="container-panneau-menu">
+                                    <h2>nos surtriangles 3</h2>
+                                    <ul class="col">
+                                        <li><a href="#">Surtriangles 3.1</a></li>
+                                        <li><a href="#">Surtriangles 3.2</a></li>
+                                        <li><a href="#">Surtriangles 3.3</a></li>
+                                    </ul>
+                                </div>
+                                <figure class="img-fl-r">
+                                    <img src="img/menu-05.jpg" alt="menu-05">
+                                </figure>
+                            </section>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#" class="item">Contacts</a></li>
+            </ul>
+        </nav>
+        <main>
+            <!-- colonne de gauche-->
+            <div class="col-left">
+                <section>
+                    <h3 class="demi-globe">Globule globe</h3>
+                    <p class="intro">It is a long established fact that a reader will be distracted by the readable
+                        content of a page
+                        when
+                        looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution
+                        of letters, as opposed to using 'Content here, content here', making it look like readable
+                        English.
+                        Many
+                        desktop publishing packages and web page editors now use Lorem Ipsum as their default model
+                        text,
+                        and a
+                        search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions
+                        have
+                        evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the
+                        like).
+                    </p>
+                </section>
+                <section>
+                    <h3 class="demi-globe">Globule pas globe</h3>
+
+                    <p>
+
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when
+                        looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution
+                        of letters, as opposed to using 'Content here, content here', making it look like readable
+                        English.
+                        Many
+                        desktop publishing packages and web page editors now use Lorem Ipsum as their default model
+                        text,
+                        and a
+                        search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                    </p>
+                    <p>
+                        Various versions have evolved over the years, sometimes by accident, sometimes on purpose
+                        (injected
+                        humour and the like).
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                        alteration in some form, by injected humour, or randomised words which don't look even slightly
+                        believable.
+                    </p>
+                    <figure class="gluon">
+                        <img src="img/globule.jpg" alt="Gluon de globule" title="Gluon de globule">
+                        <figcaption>Gluon de globule</figcaption>
+                    </figure>
+                    <p>
+                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
+                        embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend
+                        to
+                        repeat
+                        predefined chunks as necessary, making this the first true generator on the Internet. It uses a
+                        dictionary of over 200 Latin words, combined with a handful of model sentence structures, to
+                        generate
+                        Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from
+                        repetition,
+                        injected humour, or non-characteristic words etc.
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                        classical
+                        Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
+                        professor at
+                        Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
+                        from
+                        a
+                        Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered
+                        the
+                        undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum
+                        et
+                        Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on
+                        the
+                        theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem
+                        ipsum
+                        dolor
+                        sit amet..", comes from a line in section 1.10.32.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="demi-globe">Tip globule au top di blog</h3>
+                    <div class="deux-col">
+                        <p>
+                            It is a long established fact that a reader will be distracted by the readable content of a
+                            page
+                            when
+                            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                            distribution
+                            of letters, as opposed to using 'Content here, content here', making it look like readable
+                            English.
+                        </p>
+                        <p>
+                            Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
+                            model
+                            text,
+                            and a
+                            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
+                            versions
+                            have
+                            evolved over the years, sometimes by accident, sometimes on purpose.
+                        </p>
+                    </div>
+                </section>
+            </div>
+            <!--colonne de droite-->
+            <div class="col-right">
+                <section>
+                    <figure>
+                        <img src="img/pasglobe.jpg" alt="pas globe">
+                    </figure>
+                    <h3>Pas globe</h3>
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when
+                        looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution
+                        of letters, as opposed to using 'Content here, content here', making it look like readable
+                        English.
+                    </p>
+                </section>
+                <section>
+                    <figure><img src="img/pasblog.jpg" alt="pas blog"></figure>
+                    <h3>Pas blog</h3>
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when
+                        looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution
+                        of letters, as opposed to using 'Content here, content here', making it look like readable
+                        English.
+                    </p>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li class="item-menu-footer"><a href="#">lien footer</a></li>
+                    <li class="item-menu-footer"><a href="#">lien footer</a></li>
+                    <li class="item-menu-footer"><a href="#">lien footer</a></li>
+                    <li class="item-menu-footer"><a href="#">lien footer</a></li>
+                    <li class="item-menu-footer"><a href="#">lien footer</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+</html>
