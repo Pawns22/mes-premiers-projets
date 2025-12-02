@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street life</title>
+
+    <style>
+
+        @media screen and (max-width: 800px) {
+
+            .en-tete a {
+        flex-direction: column;
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .menu-item {
+        flex-direction: column;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .item a {
+        padding: 12px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    footer a {
+        font-size: 18px;
+    }
+
+    .subtitle,
+    .copyright {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .menu-footer {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+        }
+
+        ul, li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+
+        }
+
+        .en-tete a {
+            display: flex;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+        }
+
+        .logo:hover {
+            filter: opacity(60%);
+        }
+
+        .en-tete a h1 {
+            color: #0087cc;
+            font-weight: lighter;
+        }
+
+        .en-tete a h1:hover {
+            opacity: 60%;
+        }
+
+        .menu {
+            background-color: #0087cc;
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            margin-right: 7.5%;
+        }
+
+        .item a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .item a:hover {
+            color: #ddd;
+        }
+
+        main {
+            margin: 0 auto;
+            width: 85%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            vertical-align: top;
+            text-align: justify;
+            margin-top: 20px;
+        }
+
+        .container time {
+            color: #929292;
+            font-size: 12px;
+        }
+
+        .container h2 {
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .container h2 a {
+            text-decoration: none;
+            color: #0087cc;
+        }
+
+        .container h2 a:hover {
+            color: #ff7b29;
+        }
+
+        .container figure {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container figure img{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .container figure figcaption {
+            color: #0087cc;
+            font-size: 12px;
+        }
+
+        .container p {
+            color: #555;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #0087cc;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            opacity: 60%;
+        }
+
+        .subtitle {
+            color: #555;
+            opacity: 60%;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 0;
+            margin-top: 10px;
+        }
+
+        .copyright {
+            color: #555;
+            opacity: 60%;
+            margin-top: 0;
+            font-weight: lighter;
+        }
+
+        .menu-footer {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .lien-icone a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .lien-icone img {
+            display: block;
+            object-fit: contain;
+        }
+
+        .lien-icone img:hover {
+            filter: opacity(60%);
+        }
+
+    </style>
+</head>
+<body>
+    <header class="en-tete">
+        <a href="#"><img class="logo" src="img/logo.jpg" alt="logo">
+        <h1>Street life</h1></a>
+    </header>
+
+    <nav class="menu">
+        <ul class="menu-item">
+            <li class="item"><a href="#">accueil</a></li>
+            <li class="item"><a href="#">archives</a></li>
+            <li class="item"><a href="#">panorama</a></li>
+            <li class="item"><a href="#">contact</a></li>
+            <li class="item"><a href="#">à propos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+        <section class="col">
+            <time datetime="2024-07-01">1 juillet 2024</time>
+            <h2><a href="#">Jungle street lives</a></h2>
+            <figure>
+            <img src="img/image.jpg" alt="image">
+            <figcaption>
+                Toward the jungle street life in Antroop, Vermont, winter 2020
+            </figcaption>
+            </figure>
+            <p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).</p>
+        </section>
+        <section class="col">
+            <time datetime="2024-06-10">10 juin 2024</time>
+            <h2><a href="#">Joe Cowards</a></h2>
+            <figure>
+            <img src="img/picture.jpg" alt="image">
+            <figcaption>
+                Joe Cowards incredible face at jungle life party, Sylver, 2019
+            </figcaption>
+            </figure>
+            <p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).</p>
+        </section>
+        <section class="col">
+            <time datetime="1815-04-11">11 avril 1815</time>
+            <h2><a href="#">Marque Moon</a></h2>
+            <figure>
+            <img src="img/cinema.jpg" alt="image">
+            <figcaption>
+                Movie theater's marque, Moon, 1815
+            </figcaption>
+            </figure>
+            <p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).</p>
+        </section>
+        </div>
+    </main>
+
+    <footer>
+        <a href="#">Street life - The jungle groove</a>
+        <p class="subtitle">Handcrafted pixels & text</p>
+        <p class="copyright">&copy; 2012-2024, street life LTD, Shipped from Hambourg, Germany.</p>
+        <ul class="menu-footer">
+            <li class="lien-icone"><a href="#"><img src="img/pinterest.png" alt="logo-pinterest"></a></li>
+            <li class="lien-icone"><a href="#"><img src="img/google.png" alt="logo-google"></a></li>
+            <li class="lien-icone"><a href="#"><img src="img/facebook.png" alt="logo-facebook"></a></li>
+            <li class="lien-icone"><a href="#"><img src="img/twitter.png" alt="logo-twitter"></a></li>
+            <li class="lien-icone"><a href="#"><img src="img/linkedin.png" alt="logo-linkedin"></a></li>
+        </ul>
+    </footer>
+    
+</body>
+</html>
